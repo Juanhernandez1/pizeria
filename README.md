@@ -58,7 +58,7 @@ en el siguiente orden por motivos de relaciones
 php artisan migrate --path=database/migrations/2020_08_11_021339_create_departamentos_table.php
 ```
 ```
-php artisan migrate --path=database/migrations/2020_08_11_021339_create_departamentos_table.php
+php artisan migrate --path=database/migrations/2020_08_11_015022_create_sucursales_table.php
 ```
 ```
 php artisan migrate --path=database/migrations/2020_10_12_000000_create_users_table.php
@@ -145,4 +145,4 @@ tiene que llevar la propieda M que ahce referencia al menu de pizzas y las porpi
 ---
 ⌨️ con ❤️ por [JuanHernandez](https://github.com/Juanhernandez1)
 
-# Disculpas por algun error de ortografía :0
+Disculpas por algun error de ortografía :0
