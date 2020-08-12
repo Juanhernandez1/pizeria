@@ -62,8 +62,8 @@ class PeidosPizzasController extends Controller
             $datos["pizza"] = json_encode($request->all()["pizza"]);
             $datos["cantidad"] = $objDetalle->cantidad;
 
-            $PeidosPizzas = peidosPizzas::create($datos);
 
+            $PeidosPizzas = peidosPizzas::create($datos);
             $direcionS = sucursale::find($PeidosPizzas->sucursales_id);
             $usuario = user::find($PeidosPizzas->users_id);
 

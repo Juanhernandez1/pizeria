@@ -14,10 +14,5 @@ class menuPizzas extends Model
      */
     protected $fillable = ['nombre', 'ingredientes', 'precio', 'estado'];
     public $timestamps = false;
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = ['estado'];
+
 }

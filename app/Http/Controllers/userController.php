@@ -70,7 +70,7 @@ class userController extends Controller
         if ($usuario) {
             return $usuario;
         }
-        $arr = array('Mensaje' => 'Ingrediente No Existe');
+        $arr = array('Mensaje' => 'Usuario No Existe');
 
         return response(json_encode($arr), 404);
 
@@ -115,7 +115,7 @@ class userController extends Controller
 
             }
         }
-        $arr = array('Mensaje' => 'Ingrediente No Existe');
+        $arr = array('Mensaje' => 'Usuario No Existe');
 
         return response(json_encode($arr), 404);
 
@@ -134,7 +134,8 @@ class userController extends Controller
         $usuario->estado = "Inactivo";
         $usuario->save();
 
-        $arr = array('Mensaje' => 'Registro Eliminado');
+     $arr = array('Mensaje' => 'Registro desactivado');
+
 
         return json_encode($arr);
 
@@ -161,7 +162,7 @@ class userController extends Controller
             
             return $users;
         }
-        $arr = array('Mensaje' => 'Ingrediente No Existe');
+        $arr = array('Mensaje' => 'Usuario No Existe');
 
         return response(json_encode($arr), 404);
 

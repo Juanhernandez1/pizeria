@@ -25,7 +25,7 @@ class user extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'estado',
+        'password', 'remember_token'
     ];
 
     public function peidosPizzas()

@@ -7,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class sucursale extends Model
 {
 
-     protected $fillabel = ['departamentos_id','direcion','telefono','estado'];
+        /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable =  ['departamentos_id','direcion','telefono','estado'];
 
 
     public function departamento()
@@ -16,11 +21,6 @@ class sucursale extends Model
     }
 
       public $timestamps = false;
-         /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [ 'estado'];
+
 
 }

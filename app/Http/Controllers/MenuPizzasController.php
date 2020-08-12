@@ -122,7 +122,6 @@ class MenuPizzasController extends Controller
         try {
 
             $datos = $request->all();
-
             $MenuPizzas = menuPizzas::create($datos);
             return $MenuPizzas;
 
@@ -180,7 +179,7 @@ class MenuPizzasController extends Controller
             if ($MenuPizzas) {
 
                 $MenuPizzas->nombre = $request->nombre;
-                $MenuPizzas->ingredientes = json_encode($request->ingredientes);
+                $MenuPizzas->ingredientes = $request->ingredientes;
                 $MenuPizzas->precio = $request->precio;
                 $MenuPizzas->estado = $request->estado;
 

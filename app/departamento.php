@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class departamento extends Model
 {
 
-    protected $fillabel = ['nombre','estado'];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['nombre', 'estado'];
     public $timestamps = false;
-    public function municipios()
-    {
-        return $this->hasMany('App\municipio');
-    }
-
-      /**
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array

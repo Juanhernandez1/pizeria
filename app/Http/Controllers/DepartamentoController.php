@@ -36,12 +36,16 @@ class DepartamentoController extends Controller
      */
     public function store(Request $request)
     {
+        
         try {
             $datos = $request->all();
+ 
             $Departamento = departamento::create($datos);
+      
             return $Departamento;
 
         } catch (\Exception $e) {
+dd($e);
 
             $arr = array('Mensaje' => 'Error interno en el servidor o no se puede acceder a la base de datos');
 
