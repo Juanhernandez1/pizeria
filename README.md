@@ -19,7 +19,7 @@ tener previamente instalado y configurado los siguiente
  
 # instrucciones para levantar tu proyecto
 
-en una teminal o CMD ejecutar los siguinete comando en orden secuencial
+en una teminal o CMD ejecutar los siguinete comandos en orden secuencial
 
 ```
 git clone https://github.com/Juanhernandez1/pizeria.git
@@ -33,8 +33,8 @@ instalar dependencias
 ```
 composer install
 ```
-.env 
-copiar .env.example y renombrar el archivo a .env
+
+copiar archivo .env.example y renombrar el archivo a .env
 o ejecutar 
 ```
 cp .env.example .env
@@ -82,7 +82,7 @@ php artisan serve
 ## provar
 
 - Insomnia
-puede cargar contiene lo solicutado en la prueva
+puede cargar el archivo de exportación contiene las peticiones solicitadas en la prueva
 Insomnia_2020-08-12.json
 
 
@@ -98,9 +98,10 @@ routes/api.php
 ```
 en comentario se indica las rutas con las que se puede Realizar CRUD 
 
-para porbar, puede gerar objetos con las propiedades inidicadas en la propiedad de tipo array llamado $fillable dentro de los archivos corespondientes al modelo que estan entran dentro de la carpeta app siguiendo el mismo orden secuencial del array
+para probar, puede generar objetos con las propiedades indicadas en la propiedad de tipo array llamado $fillable dentro de los archivos correspondientes al modelo, estan dentro de la carpeta app,
+siguiendo el mismo orden secuencial del array
 
-ejem. sustituir "propiedad0" por la cadena que coresponde al indice 0 y de igual forma a completar todas y formar el objeto
+ejemplo. sustituir "propiedad0" por la cadena que coresponde al indice 0 y de igual forma a completar todas y formar el objeto
 ```
 {
     "propiedad0": "prueva"
@@ -110,10 +111,12 @@ ejem. sustituir "propiedad0" por la cadena que coresponde al indice 0 y de igual
 
 
 
-- el capo de popularidad en la tabla de ingredientes se incrementara en 1 respectivamente cuando un pedido marque su estado en Entregado
+- el campo de popularidad en la tabla de ingredientes se incrementara en 1 respectivamente cuando un pedido marque su estado en Entregado
 
-- en pedidos la propiedad piza deve contener un objeto de la siguiente forma como ejemplo
-tiene que llevar la propieda M que ahce referencia al menu de pizzas y las porpiedad P que hace referencia a personalizada
+- en pedidos la propiedad pizza deve contener un objeto de la siguiente forma como ejemplo
+tiene que llevar la propiedad M que hace referencia al menu de pizzas y las porpiedad P que hace referencia a personalizada
+
+Ejemplo.
 ```
 "pizza": {
       "M": [ 1, 5],
@@ -123,18 +126,18 @@ tiene que llevar la propieda M que ahce referencia al menu de pizzas y las porpi
       ]
     }
 ```
--- el arreglo que contendara la propiedad M enlistas los ID de las pizzas solicitades del menu de pizzas
+-- el array que contendara la propiedad M enlista los ID de las pizzas solicitades del menu de pizzas
 
--- los areglos que contiene la propiedad P enlista los ID de los ingredientes con los cuales se desea que preparen la piza 
+-- los array que contiene la propiedad P enlista los ID de los ingredientes con los cuales se desea que preparen la pizza 
 
--- cada array en la propiedad P reprecenta 1 sola pizza personalizada en el Ejemplo se puestran 3 pizzas
- y cada elemto del array en la propieda M de igual forma reprecenta 1 pizza en el ejemplo se marcar 2
+-- cada array en la propiedad P reprecenta 1 sola pizza personalizada en el Ejemplo se muestran 3 pizzas
+ y cada elemento del array en la propieda M de igual forma reprecenta 1 pizza en el ejemplo se marcan 2
 
--- cuando se realizar un pediddo se calcula de forma automatica el total como la cantidad de pizzas pedidad en base al punto anteriror
+-- cuando se realiza un pediddo se calcula de forma automatica el total como la cantidad de pizzas pedidad en base al punto anteriror
 
--- se trabajo de dicha forma por que da mas libertada al momento de selecionar n cantidad de ingredientas 
+-- se trabajó de dicha forma por que da mas libertad al momento de selecionar n cantidad de ingredientas 
 
--- dicha propieda es almacenada en la base de datos como una cadena de texto 
+--  la propiedad pizza descrita anteriormente es almacenada en la base de datos como una cadena de texto 
 
 
 # puede probar desde heroku
@@ -169,4 +172,3 @@ https://pizeria.herokuapp.com/api/login
 ---
 ⌨️ con ❤️ por [JuanHernandez](https://github.com/Juanhernandez1)
 
-Disculpas por algun error de ortografía :0
