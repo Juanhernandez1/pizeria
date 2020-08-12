@@ -58,7 +58,7 @@ en el siguiente orden por motivos de relaciones
 php artisan migrate --path=database/migrations/2020_08_11_021339_create_departamentos_table.php
 ```
 ```
-php artisan migrate --path=database/migrations/2020_08_11_021339_create_departamentos_table.php
+php artisan migrate --path=database/migrations/2020_08_11_015022_create_sucursales_table.php
 ```
 ```
 php artisan migrate --path=database/migrations/2020_10_12_000000_create_users_table.php
