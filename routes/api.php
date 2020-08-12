@@ -21,6 +21,14 @@ Route::group(['middleware' => [CheckAuth::class]], function () {
     Route::apiResource("Departamentos", 'DepartamentoController');
     Route::apiResource("usuarios", 'userController');
     Route::apiResource("MenuPizzas", 'MenuPizzasController');
+    Route::apiResource("Pedidos", 'PeidosPizzasController');
+    Route::apiResource("Sucursales", 'SucursaleController');
+    // * rutas especiales
     Route::get("MenuPizzasview", 'MenuPizzasController@menuPizzaView');
     Route::get("MenuPizzasviewone/{id}", 'MenuPizzasController@menuPizzaViewshow');
+    Route::get("MiHistorialPedidos/{id}", 'userController@showHisorial');
+    Route::get("frecuentelista", 'reportController@showFrecuente');
+    Route::get("masGastalista", 'reportController@showClinteMasGasta');
+    Route::get("ingredientePopilarlist", 'reportController@showIngredientePopular');
+
 });

@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -10,14 +9,14 @@ class user extends Authenticatable
 {
     use Notifiable;
 
-           public $timestamps = false;
+    public $timestamps = false;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'username', 'email','password', 'departamentos_id','direcion','estado'
+        'nombre', 'username', 'email', 'password', 'departamentos_id', 'direcion', 'estado',
     ];
 
     /**
@@ -29,11 +28,9 @@ class user extends Authenticatable
         'password', 'remember_token', 'estado',
     ];
 
-
-        public function peidosPizzas()
+    public function peidosPizzas()
     {
         return $this->hasMany('App\peidosPizzas');
     }
-    
 
 }

@@ -16,7 +16,7 @@ class MenuPizzasController extends Controller
     public function index()
     {
         try {
-            $menuPizzasList = menuPizzas::all();
+            $menuPizzasList = menuPizzas::where('estado', 'Activo')->get();
             return $menuPizzasList;
 
         } catch (\Exception $e) {

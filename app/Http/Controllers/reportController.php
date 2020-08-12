@@ -2,62 +2,63 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class reportController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display the specified resource.
+     *
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function showFrecuente()
     {
-        //
-    }
+        $results = $results = DB::select(DB::raw("SELECT
+    COUNT(users.id) as frecuente, users.id , users.nombre
+FROM
+    peidos_pizzas
+        JOIN
+    users ON users.id = peidos_pizzas.users_id
+GROUP BY users.id
+ORDER BY frecuente DESC"));
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return $results;
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showClinteMasGasta()
     {
-        //
+        $results = $results = DB::select(DB::raw("SELECT
+users.id,
+ users.nombre,
+    AVG(peidos_pizzas.total) as promedio
+FROM
+    peidos_pizzas
+        JOIN
+    users ON users.id = peidos_pizzas.users_id
+GROUP BY users.id
+ORDER BY promedio desc"));
+
+        return $results;
     }
 
     /**
-     * Update the specified resource in storage.
+     * Display the specified resource.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function showIngredientePopular()
     {
-        //
-    }
+        $results = $results = DB::select(DB::raw("SELECT id, ingrediente,popularida FROM pizeria.ingredientes order by popularida desc;"));
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return $results;
+
     }
 }

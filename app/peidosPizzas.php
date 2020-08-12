@@ -7,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class peidosPizzas extends Model
 {
 
-    protected $fillabel = ['users_id', 'pizza', 'cantidad', 'total','estado'];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['sucursales_id','users_id', 'pizza', 'cantidad', 'total','estado'];
 
     public function user()
     {

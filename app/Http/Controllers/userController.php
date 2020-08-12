@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\user;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class userController extends Controller
 {
@@ -14,7 +15,7 @@ class userController extends Controller
      */
     public function index()
     {
-        $userList = user::all();
+        $userList = user::where('estado', 'Activo')->get();
         return $userList;
 
     }
@@ -89,7 +90,7 @@ class userController extends Controller
         if ($usuario) {
 
             if ($usuario->password == hash('sha256', $request->password)) {
-
+                $usuario->nombre = $request->nombre;
                 $usuario->username = $request->username;
                 $usuario->email = $request->email;
                 $usuario->departamentos_id = $request->departamentos_id;
@@ -100,7 +101,7 @@ class userController extends Controller
 
                 return $usuario;
             } else {
-
+                $usuario->nombre = $request->nombre;
                 $usuario->username = $request->username;
                 $usuario->email = $request->email;
                 $usuario->password = hash('sha256', $request->password);
@@ -138,4 +139,32 @@ class userController extends Controller
         return json_encode($arr);
 
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showHisorial($id)
+    {
+        $users = DB::table('users')
+            ->join('peidos_pizzas', 'users.id', '=', 'peidos_pizzas.users_id')
+            ->select('peidos_pizzas.*')
+            ->where('users.id', $id)
+            ->get();
+
+        if ($users) {
+            foreach ($users as $key => $value) {
+                $value->pizza = json_decode($value->pizza);
+            }
+            
+            return $users;
+        }
+        $arr = array('Mensaje' => 'Ingrediente No Existe');
+
+        return response(json_encode($arr), 404);
+
+    }
+
 }
