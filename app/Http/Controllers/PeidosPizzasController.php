@@ -51,9 +51,11 @@ class PeidosPizzasController extends Controller
             $objetoP = json_encode($datos);
             $arraypizas = json_decode($objetoP)->pizza;
 
-            $Detalle = new detalle();
 
-            $objDetalle = $Detalle->vistadetalle($arraypizas, $datos->estado);
+            $Detalle = new detalle();
+      
+
+            $objDetalle = $Detalle->vistadetalle($arraypizas, $datos["estado"]);
 
             $datos["total"] = $objDetalle->total;
 
