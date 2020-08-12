@@ -38,7 +38,6 @@ class MenuPizzasController extends Controller
     {
         try {
             $pila = array();
-            //  array_push($pila, "manzana", "arándano");
 
             $menuPizzasList = menuPizzas::all();
 

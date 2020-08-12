@@ -1,79 +1,148 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+#  Prueba técnica
+## Desarrollador web
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
+#  API 🛠️
+## sistema de órdenes de pizzas,
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Comenzando 🚀
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Pre-requisitos 📋
 
-## Learning Laravel
+tener previamente instalado y configurado los siguiente
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- PHP 7
+- Composer
+- mysql
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+ 
+# instrucciones para levantar tu proyecto
 
-## Laravel Sponsors
+en una teminal o CMD ejecutar los siguinete comando en orden secuencial
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```
+git clone https://github.com/Juanhernandez1/pizeria.git
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+```
+cd pizeria
+```
 
-## Contributing
+instalar dependencias 
+```
+composer install
+```
+.env 
+copiar .env.example y renombrar el archivo a .env
+o ejecutar 
+```
+cp .env.example .env
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+Dentro del Administrador de base de datos para mysql
+- phpmyadmin
+- mysqlworkbench
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+crear una base de datos llamda laravel
 
-## Security Vulnerabilities
+```
+create database laravel
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+retonar a la teminarl 
+# ejecutar migraciones
+en el siguiente orden por motivos de relaciones 
+```
+php artisan migrate --path=database/migrations/2020_08_11_021339_create_departamentos_table.php
+```
+```
+php artisan migrate --path=database/migrations/2020_08_11_021339_create_departamentos_table.php
+```
+```
+php artisan migrate --path=database/migrations/2020_10_12_000000_create_users_table.php
+```
+tablas faltantes 
+```
+php artisan migrate
+```
 
-## License
+# cargando datos con seeder
+```
+php artisan db:seed
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Despliegue 📦
+
+```
+php artisan serve
+```
+
+## provar
+
+- Insomnia
+puede cargar contiene lo solicutado en la prueva
+Insomnia_2020-08-12.json
+
+
+# notas Adicionales
+
+- para poder realizar peticiones de cualquier tipo nesecita logear se o registrarse 
+en este caso seria primero registrarse y despues logearse
+
+- en el archivo api.php ubicado en la siguiente ruta 
+
+```
+routes/api.php
+```
+en comentario se indica las rutas con las que se puede Realizar CRUD 
+
+para porbar, puede gerar objetos con las propiedades inidicadas en la propiedad de tipo array llamado $fillable dentro de los archivos corespondientes al modelo que estan entran dentro de la carpeta app siguiendo el mismo orden secuencial del array
+
+ejem. sustituir "propiedad0" por la cadena que coresponde al indice 0 y de igual forma a completar todas y formar el objeto
+```
+{
+    "propiedad0": "prueva"
+    "propiedad1": "prueva"
+}
+```
+
+
+
+- el capo de popularidad en la tabla de ingredientes se incrementara en 1 respectivamente cuando un pedido marque su estado en Entregado
+
+- en pedidos la propiedad piza deve contener un objeto de la siguiente forma como ejemplo
+tiene que llevar la propieda M que ahce referencia al menu de pizzas y las porpiedad P que hace referencia a personalizada
+```
+"pizza": {
+      "M": [ 1, 5],
+      "P": [ [1, 2, 3, 4 ],
+             [ 6, 7, 8, 2 ],
+			 [ 9, 12, 8, 1 ]
+      ]
+    }
+```
+-- el arreglo que contendara la propiedad M enlistas los ID de las pizzas solicitades del menu de pizzas
+
+-- los areglos que contiene la propiedad P enlista los ID de los ingredientes con los cuales se desea que preparen la piza 
+
+-- cada array en la propiedad P reprecenta 1 sola pizza personalizada en el Ejemplo se puestran 3 pizzas
+ y cada elemto del array en la propieda M de igual forma reprecenta 1 pizza en el ejemplo se marcar 2
+
+-- cuando se realizar un pediddo se calcula de forma automatica el total como la cantidad de pizzas pedidad en base al punto anteriror
+
+-- se trabajo de dicha forma por que da mas libertada al momento de selecionar n cantidad de ingredientas 
+
+-- dicha propieda es almacenada en la base de datos como una cadena de texto 
+
+
+
+## Autor ✒️
+
+* **Juan Hernandez** - *Trabajo Inicial* - 
+
+---
+⌨️ con ❤️ por [JuanHernandez](https://github.com/Juanhernandez1)
+
+# Disculpas por algun error de ortografía :0

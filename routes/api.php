@@ -17,6 +17,7 @@ Route::apiResource('login', 'loginController');
 Route::post("Resgistro", 'userController@store');
 
 Route::group(['middleware' => [CheckAuth::class]], function () {
+    // * CRUD
     Route::apiResource("Ingredientes", 'IngredientesController');
     Route::apiResource("Departamentos", 'DepartamentoController');
     Route::apiResource("usuarios", 'userController');

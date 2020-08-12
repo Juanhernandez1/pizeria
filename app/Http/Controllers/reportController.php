@@ -56,7 +56,7 @@ ORDER BY promedio desc"));
      */
     public function showIngredientePopular()
     {
-        $results = $results = DB::select(DB::raw("SELECT id, ingrediente,popularida FROM pizeria.ingredientes order by popularida desc;"));
+        $results = $results = DB::select(DB::raw("SELECT id, ingrediente,popularida FROM ingredientes order by popularida desc;"));
 
         return $results;
 
