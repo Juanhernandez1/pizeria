@@ -137,6 +137,27 @@ tiene que llevar la propieda M que ahce referencia al menu de pizzas y las porpi
 -- dicha propieda es almacenada en la base de datos como una cadena de texto 
 
 
+# puede probar desde heroku
+
+```
+https://pizeria.herokuapp.com/api/
+```
+- logearse en la Api
+
+usuario de prueva enviar por post
+
+```
+https://pizeria.herokuapp.com/api/login
+```
+
+```
+{
+"username":"JuanH", "password":"1234"
+	
+}
+```
+
+
 
 ## Autor ✒️
 

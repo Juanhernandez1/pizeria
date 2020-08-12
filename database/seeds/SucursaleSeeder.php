@@ -12,6 +12,6 @@ class SucursaleSeeder extends Seeder
      */
     public function run()
     {
-         sucursale::insert(['departamentos_id'=>6,'direcion'=>'Metrocentro 8va etapa','telefono'=> "2222-4444", 'estado'=>"Activo" ]);
+         sucursale::insert(['departamentos_id'=>1,'direcion'=>'Metrocentro 8va etapa','telefono'=> "2222-4444", 'estado'=>"Activo" ]);
     }
 }
