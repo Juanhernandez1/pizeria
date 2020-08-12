@@ -156,6 +156,9 @@ https://pizeria.herokuapp.com/api/login
 	
 }
 ```
+ 
+-- puede no mostar datos y lanzar error debido a los id incremetales y add-ons de ClearDB MySQL incrementa en 10 
+
 
 
 
